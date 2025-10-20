@@ -60,13 +60,13 @@ const NewsCard = ({ news }) => {
           <img
             src={thumbnail_url}
             alt={title}
-            className="rounded-xl w-full h-52 object-cover"
+            className="rounded-xl w-full lg:h-96 object-cover"
           />
         </figure>
       </div>
 
       {/* Body */}
-      <div className="card-body">
+      <div className="card-body ">
         {/* Description with toggle */}
         <p className="text-sm text-gray-600 mt-1">
           {expanded ? details : details.slice(0, 150) + "..."}
