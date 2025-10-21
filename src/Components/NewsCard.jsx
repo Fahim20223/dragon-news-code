@@ -7,11 +7,13 @@ import {
   FaBookmark,
   FaShareAlt,
 } from "react-icons/fa";
+import { Link } from "react-router";
 
 const NewsCard = ({ news }) => {
   const [expanded, setExpanded] = useState(false);
 
-  const { title, rating, total_view, author, thumbnail_url, details } = news;
+  const { id, title, rating, total_view, author, thumbnail_url, details } =
+    news;
 
   // Format date as YYYY-MM-DD
   const formattedDate = new Date(author?.published_date)
@@ -68,12 +70,15 @@ const NewsCard = ({ news }) => {
       {/* Body */}
       <div className="card-body ">
         {/* Description with toggle */}
-        <p className="text-sm text-gray-600 mt-1">
-          {expanded ? details : details.slice(0, 150) + "..."}
+        <p className="text-gray-600 text-sm">
+          {details.length > 120 ? details.slice(0, 120) + "..." : details}
         </p>
-        <button className="cursor-pointer hover:underline font-medium flex items-center gap-1 mt-1 text-secondary">
+        <Link
+          to={`/news-details/${id}`}
+          className="cursor-pointer hover:underline font-medium flex items-center gap-1 mt-1 text-secondary"
+        >
           See More <FaArrowRight className="inline text-xs" />
-        </button>
+        </Link>
 
         {/* Footer */}
         <div className="flex justify-between items-center mt-4 pt-2 border-t border-gray-200">
