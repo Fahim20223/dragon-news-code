@@ -7,17 +7,17 @@ const Login = () => {
   const { userSignIn } = use(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
-  console.log(location);
+  // console.log(location);
   const handleLogin = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log({ email, password });
+    // console.log({ email, password });
 
     userSignIn(email, password)
       .then((result) => {
-        console.log(result.user);
-        navigate(`${location.state ? location.state : "/"}`);
+        // console.log(result.user);
+        navigate(`${location?.state ? location.state : "/"}`);
       })
       .catch((error) => {
         console.log(error);

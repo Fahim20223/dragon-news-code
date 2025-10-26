@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   FaEye,
   FaStar,
@@ -10,8 +10,6 @@ import {
 import { Link } from "react-router";
 
 const NewsCard = ({ news }) => {
-  const [expanded, setExpanded] = useState(false);
-
   const { id, title, rating, total_view, author, thumbnail_url, details } =
     news;
 

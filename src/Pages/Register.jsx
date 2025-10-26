@@ -8,7 +8,7 @@ const Register = () => {
   const navigate = useNavigate();
   const handleRegister = (e) => {
     e.preventDefault();
-    console.log(e.target);
+    // console.log(e.target);
     const name = e.target.name.value;
     if (name.length < 5) {
       setNameError("Name should be more than 5 character");
@@ -19,7 +19,7 @@ const Register = () => {
     const email = e.target.email.value;
     const photo = e.target.photo.value;
     const password = e.target.password.value;
-    console.log({ name, email, photo, password });
+    // console.log({ name, email, photo, password });
     createUser(email, password)
       .then((result) => {
         // console.log(result.user);
